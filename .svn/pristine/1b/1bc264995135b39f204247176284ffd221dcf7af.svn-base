@@ -1,0 +1,11 @@
+/* pages/my/my-user-know/my-user-know.wxss */
+
+.title {
+  padding: 56rpx 40rpx 80rpx;
+  text-indent: 2em;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 60rpx;
+}

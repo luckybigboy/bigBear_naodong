@@ -1,0 +1,13 @@
+<!--pages/my/my-setting/my-setting.wxml-->
+<view class='Set-ul'>
+  <view class='Set-li' wx:for="{{ Setting }}" wx:key="" bindtap='toPage' data-url="{{ item.url }}">
+    <text>{{ item.name }}</text>
+    <image class='Set-icon-arrow' src='/images/my/icon-rjt.png'></image>
+  </view>
+  <view class='share'>
+    <button class='share-Button' open-type="share">推荐给朋友</button>
+  </view>
+</view>
+<view class='Set-outLogin' bindtap='backLogin'>
+  <p>退出登录</p>
+</view>

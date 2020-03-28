@@ -1,0 +1,87 @@
+/* pages/edit/editor-picture/editor-picture.wxss */
+.top{
+  position: absolute;
+  width:100%;
+  top:10rpx;
+  display: flex;
+  flex-flow:wrap;
+  z-index: 10;
+  color:white;
+  justify-content:space-around;
+}
+.hint{
+  position: absolute;
+  top:10rpx;
+  width:100%;
+  font-size: 33rpx;
+  text-align: center;
+  color:white;
+  z-index: 10;
+}
+page{
+  background:rgb(14, 13, 13);
+}
+view{
+  font-size: 30rpx;
+}
+.bottom{
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  z-index: 10;
+}
+
+.input{
+  display: flex;
+  height: 50rpx;
+  width:50%;
+}
+.input>.label{
+  min-width:150rpx;
+  font-size: 30rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.input>input{
+  margin-left:10rpx;
+  text-align: center;
+  max-width:160rpx;
+  border:1px solid rgb(255, 255, 255);
+  height: 50rpx;
+  line-height: 50rpx;
+  min-height: 50rpx;
+  box-sizing: border-box;
+}
+.imgs {
+  width: 100%;
+  padding: 3% 10%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.imgs image {
+  width: 44rpx;
+  height: 44rpx;
+}
+.bottom-btn {
+  width: 100%;
+  border-top: 1rpx solid #BCBBC1;
+  display: -webkit-flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 3% 10%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.bottom-btn button{
+  display: inline-block;
+  font-size:30rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:42rpx;
+  z-index:2;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0;
+  padding: 10rpx;
+}

@@ -1,0 +1,11 @@
+<!--pages/my/my-edit-cover/my-edit-cover.wxml-->
+<view class='cover-content'>
+  <view class="{{boolean == true ? 'colors':' '}}" bindtap='randoms'>
+    <image src="/images/initiate/icon-suiji.png" />
+  </view>
+  <view class="{{status === idx? 'show':' '}}" wx:for-index='idx' wx:for="{{images}}" data-t="{{idx}}" bindtap='changeBorder' >
+    <image src="{{item.imgUrl}}" />
+  </view>
+ 
+</view>
+ <button class='btn' bindtap='selectImg' disabled='{{btn}}'>确定</button>

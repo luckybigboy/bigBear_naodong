@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "开脑洞",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "toast": "/component/toast/toast"
+  },
+  "disableScroll": true
+}

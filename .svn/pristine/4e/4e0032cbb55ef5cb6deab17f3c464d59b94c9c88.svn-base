@@ -1,0 +1,42 @@
+<!--pages/my/my-system-news/my-system-news.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+
+<scroll-view  bindscrolltolower='lower' scroll-y='true' style='height:{{ scrollHeight }}px'>
+ <view wx:if="{{ list.length > 0 }}">
+     <view wx:for="{{ list }}" wx:key="">
+    <view class='time'>{{ item.official_add_time }}</view>
+    <view class='news_box'>
+      <view class='news_content'>
+        <text class='head_title'>#{{ item.official_title }}#</text>
+        <view class='message'>
+          <view wx:if="{{ item.official_status == 1 }}">
+            <template is="wxParse" data="{{                                                   wxParseData:item.official_content.nodes }}">
+            </template>
+          </view>
+          <view wx:if='{{item.official_status == 3 }}'>
+            <template is="wxParse" data="{{                                                   wxParseData:item.official_content.nodes }}" class='underline'>
+            </template>
+          </view>
+          <view wx:if="{{ item.official_status == 2 }}">
+            你在{{ item.article_add_time }}
+            <view class='underLine' bindtap='toPage' data-id="{{ item.article_id  }}">
+              {{ item.article_title }}
+            </view>
+            发布的脑洞还有不足24小时失效,快去管理脑洞吧~
+          </view>
+        </view>
+        <image src='{{ iconImg }}' class='logo_one'></image>
+        <image src='{{ logo }}' class='logo_two'></image>
+      </view>
+    </view>
+ </view>
+      <text wx:if="{{list.length == total0}}" class='tip'>已无更多数据</text>
+     <text wx:else class='tip'>正在加载...</text>
+  </view>
+   
+
+  <view class='noNews'  wx:if="{{ list.length == 0 }}">
+    <image src='../../../images/default-my.png'></image>
+    <view>空空如也~</view>
+  </view>
+  </scroll-view>

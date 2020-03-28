@@ -1,0 +1,14 @@
+<!--pages/my/my-setting-about/my-setting-about.wxml-->
+<view class='Login'>
+  <image class='img-arrow' src='https://gy.erroy.cn{{ data.app_logo }}            '></image>
+</view>
+<view class='about-Content'>
+  <p>{{ data.app_chinese_name }}</p>
+  <view>Version {{ data.app_version }}</view>
+</view>
+
+<view class='footer'>
+  <p bindtap='goUser'>《脑洞大大开软件许可服务协议》</p>
+  <view class='Copyright'>软信通网络科技有限公司·版权所有</view>
+  <view class='day'>Copyringt&#1692019-2029 RXT. All rights reserved.</view>
+</view>

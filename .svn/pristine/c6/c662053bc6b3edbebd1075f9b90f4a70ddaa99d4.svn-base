@@ -1,0 +1,4 @@
+<!--pages/my/my-setting-protocol/my-setting-protocol.wxml-->
+<view class='Protocol'>
+  <p> {{ content }} </p>
+</view>

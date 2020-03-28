@@ -1,0 +1,239 @@
+/* pages/index/index-search/index-search.wxss */
+
+/* 搜索头部 */
+
+.search-header {
+  position: relative;
+}
+.search-header view{
+  width: 90%;
+  height: 72rpx;
+  display: -webkit-flex;
+  align-items: center;
+  background-color: rgba(142,142,147,0.12);
+  margin-left: 5%; 
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  transition: 0.5s;
+}
+.search-header .search-left {
+  width: 75%;
+}
+.search-header image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+.search-header input {
+  flex: 1;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 20rpx;
+  caret-color:rgba(142,112,55,1);
+}
+.search-header button {
+  position: absolute;
+  right: 5%;
+  bottom: 11rpx;
+  display: inline-block;
+  padding: 0;
+  line-height: inherit;
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:48rpx;
+  background-color: #fff;
+  visibility: hidden;
+  transition: 0.2s;
+  background-color: transparent;
+}
+.search-header .search-btn {
+ visibility: visible;
+}
+button::after{
+  border: none;
+}
+
+/* 搜索提示 */
+.search-tips {
+  display: none;
+}
+.hot-title {
+  display: block;
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(142,112,55,1);
+  line-height:40rpx;
+  margin-top: 56rpx;
+  margin-left: 5%;
+}
+.hot-title image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  float: right;
+  margin-right: 50rpx;
+}
+.search-hot {
+  margin-left: 5%;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.search-hot text {
+  display: block;
+  margin-right: 60rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:40rpx;
+  margin-top: 40rpx;
+}
+
+/* 搜索到的用户 */
+.search-content {
+  display: none;
+}
+.searchUser {
+   display: block;
+}
+.search-user{
+  height: 120rpx;
+  padding: 10rpx 42rpx;
+  box-sizing: border-box;
+  box-shadow:0rpx 5rpx 20rpx 0rpx rgba(153,153,153,0.1);
+}
+.user-left {
+  position: relative;
+}
+.user-left view {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.user-left view image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.user-left view:nth-of-type(2) image {
+   position: absolute;
+  left: 18rpx;
+}
+.user-left view:nth-of-type(3) image {
+   position: absolute;
+  left: 36rpx;
+}
+.user-left view:nth-of-type(4) image {
+   position: absolute;
+  left: 54rpx;
+}
+.user-left view:nth-of-type(5) image {
+   position: absolute;
+  left: 72rpx;
+}
+.user-right {
+  position: absolute;
+  right: 5%;
+  line-height: 100rpx;
+  font-size:30rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.user-right image {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+/* 搜索到的列表 */
+
+.search-list {
+  box-shadow:0rpx 5rpx 20rpx 0rpx rgba(153,153,153,0.1);
+}
+.search-list text:first-of-type {
+  display: block;
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:48rpx;
+  padding: 20rpx 46rpx;
+  box-sizing: border-box;
+}
+.search-list text:nth-of-type(2) {
+  display: block;
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:48rpx;
+  letter-spacing:2rpx;
+  padding: 0rpx 46rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.search-list text:nth-of-type(3) {
+  display: block;
+  font-size:24rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:34rpx;
+  padding: 20rpx 46rpx;
+  box-sizing: border-box;
+}
+
+/* 搜索到的用户列表 */
+.search-userList{
+  display: none;
+}
+.listBlock {
+  display: block;
+}
+.userList {
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 25rpx;
+  box-sizing: border-box;
+  border-bottom:2rpx solid rgba(188,187,193,0.3);
+}
+.userList-left image{
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.userList-left text {
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:44rpx;
+}
+.userList-right image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+.userList-right text {
+  font-size:30rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+}

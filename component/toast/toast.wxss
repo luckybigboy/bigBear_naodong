@@ -1,0 +1,70 @@
+/* component/toast/toast.wxss */
+
+.toast-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 1100;
+  transition: .5s;
+    opacity: 0;
+}
+
+.toast-model {
+  border-radius: 28rpx;
+  background: #e6e6e6;
+  width: 540rpx;
+  display: inline-block;
+  margin-top: 50%;
+box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.1)
+}
+
+.toast-body {
+  min-height: 238rpx;
+  position: relative;
+  text-align: center;
+}
+
+.h3 {
+  font-size: 34rpx;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 44rpx;
+  padding-top: 38rpx;
+  display: block;
+}
+
+.p {
+  display: block;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 32rpx;
+  padding: 0 30rpx;
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+
+.bottom {
+  font-size: 0;
+  border-top: 1px solid #3f3f3f;
+}
+
+.toast-btn {
+  width: 50%;
+  display: inline-block;
+  border-radius: 0;
+  background: transparent;
+  font-size: 34rpx;
+  font-weight: 400;
+  color: rgba(0, 122, 255, 1);
+  padding: 20rpx 0;
+  line-height: normal;
+}
+
+.bottom .toast-btn:nth-child(2) {
+  border-left: 1px solid #3f3f3f;
+}

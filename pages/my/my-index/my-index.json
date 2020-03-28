@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "toast": "/component/toast/toast"
+    
+  },
+  "disableScroll": true,
+  "navigationBarTitleText": "个人中心"
+}

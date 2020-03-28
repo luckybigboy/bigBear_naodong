@@ -1,0 +1,44 @@
+/* pages/my/my-set-profile/my-set-profile.wxss */
+
+/* pages/my-edit-profile/my-edit-profile.wxss */
+
+page {
+  background: #f8f8f8;
+}
+
+.box {
+  background: #fff;
+}
+
+#txtarea {
+  width: 696rpx;
+  height: 240rpx;
+  resize: none;
+  border: none;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  position: relative;
+  margin: 22rpx auto 0;
+  padding-top: 24rpx;
+}
+
+.wordScore {
+  position: absolute;
+  right: 32rpx;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  margin-top: -60rpx;
+}
+
+.submit {
+  width: 664rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  background: #1aad19;
+  color: #fff;
+  margin-top: 70rpx;
+}

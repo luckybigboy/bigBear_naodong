@@ -1,0 +1,172 @@
+// pages/my/my-attention/my-attention.js
+
+var app = getApp();
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    a: false,
+    b: false,
+    user_id: '',
+    Attention: []
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+    let that = this;
+    console.log("他人",options)
+    //接受参数用户id
+    this.setData({
+      user_id: options.id,
+      type: options.type
+    })
+
+    //获取数据
+    wx.request({
+
+      url: app.globalData.url + '/user/User/getUserOther',
+      data: {
+        user_id: that.data.user_id,
+        type: 0
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res);
+        that.setData({
+          Attention: res.data.data
+        })
+        if(that.data.type==1){
+          for (let i = 0; i < res.data.data.length; i++) {
+            let att = "Attention["+i+"].status";
+            let color = 'Attention[' + i + '].bgColor';
+            that.setData({
+              [att]:'关注',
+              [color]:true,
+              a:true
+            })
+          }
+        }
+      }
+    })
+
+  },
+
+  /**
+   * 点击互关-关注、已关注-关注切换效果
+   */
+  showedit: function (e) {
+   console.log(e);
+    var that = this;
+    let i = e.target.dataset.index;
+    var aa = 'Attention[' + i + '].status';
+    var bb = 'Attention[' + i + '].bgColor';
+
+    if (this.data.Attention[i].status !== '关注') {
+      if (this.data.Attention[i].status == '已关注') {
+        this.setData({
+          [aa]: '关注',
+          a: true,
+          [bb]: true
+        })
+      } else if (this.data.Attention[i].status == '互关') {
+        this.setData({
+          [aa]: '关注',
+          b: true,
+          [bb]: true
+        })
+      }
+    } else {
+      if (this.data.a) {
+        this.setData({
+          [aa]: '已关注',
+          a: false,
+          [bb]: false
+        })
+      }
+      if (this.data.b) {
+        this.setData({
+          [aa]: '互关',
+          b: false,
+          [bb]: false
+        })
+      }
+    }
+
+    let user_id = e.target.dataset.user;  //被动用户id
+    console.log(user_id)
+    wx.request({
+      url: app.globalData.url + '/user/User/addUserOther',
+      data: {
+        active_user_id: wx.getStorageSync('userInfo').user_id,  //主动用户id
+        passive_user_id:user_id,                                //被动用户id
+        other_type:1,                                           //类型
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'    // 默认值
+      },
+      success(res) {
+        console.log(res);
+      }
+    })
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+
+})

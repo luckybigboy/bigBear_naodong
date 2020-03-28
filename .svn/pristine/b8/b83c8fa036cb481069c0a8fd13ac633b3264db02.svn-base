@@ -1,0 +1,16 @@
+<!--component/toast/toast.wxml-->
+<view wx:if="{{status}}">
+  <view class='toast-mask' animation="{{animation}}">
+    <view class='toast-model'>
+      <view class='toast-body'>
+        <text class='h3'>{{title}}</text>
+        <text class='p'>{{cont}}</text>
+      </view>
+
+      <view class='bottom'>
+        <button wx:if="{{cancel}}" show="{{cancel}}" class='toast-btn' bindtap='cancel'>取消</button>
+        <button class='toast-btn' bindtap='confirm'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,165 @@
+/* pages/my/my-message-inform/my-message-inform.wxss */
+
+page {
+  background: #f8f8f8;
+}
+
+.logo {
+  width: 80rpx;
+  height: 80rpx;
+  vertical-align: middle;
+}
+
+.logoImg {
+  width: 84rpx;
+  height: 82rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.angleImg {
+  width: 28rpx;
+  height: 28rpx;
+  margin-top: 30rpx;
+}
+
+.fr {
+  float: right;
+}
+
+.head_box {
+  background: #fff;
+  padding: 20rpx 24rpx;
+  margin-top: 5rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.circle {
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  background: #f5a623;
+  border-radius: 50%;
+  right: 70rpx;
+  top: 20rpx;
+  margin-top: 36rpx;
+}
+
+.head_box text {
+  font-size: 34rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  margin-left: 20rpx;
+}
+
+.message_bodyer {
+  margin-top: 145rpx;
+  background: #fff;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.message_item {
+  display: flex;
+  margin-bottom: 82rpx;
+  padding: 20rpx 34rpx 0 22rpx;
+}
+
+.message_item:last-child {
+  margin-bottom: 0;
+}
+
+.comment_style {
+  width: 400rpx;
+  margin-left: 34rpx;
+  letter-spacing: 8rpx;
+  font-size: 28rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.rightContent {
+  width: 160rpx;
+  height: 96rpx;
+  display: -webkit-box;
+  margin-left: 66rpx;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  color: #666666;
+  font-size: 24rpx;
+  letter-spacing:2rpx;
+  float: right;
+}
+
+.heartImg {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin: 0 8rpx;
+}
+
+.fzStyle {
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.fzEight {
+  font-size: 28rpx;
+  display: inline;
+}
+
+.fzFour {
+  font-size: 24rpx;
+  display: inline;
+}
+.name2{
+  display: inline;
+}
+
+.behaviorText {
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold;
+  font-weight: 600;
+  color: rgba(51, 51, 51, 1);
+}
+.collectImg{
+  width: 72rpx;
+  height: 94rpx;
+  margin-left: 52rpx;
+}
+
+.message_bodyer .noNews{
+    text-align: center;
+}
+
+.message_bodyer .noNews image{
+    width: 378rpx;
+    height: 236rpx;
+    margin: 164rpx auto 88rpx;
+}
+.message_bodyer .noNews view{
+    font-size:32rpx;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    line-height:44rpx;
+    letter-spacing:2rpx;
+}
+.container{
+   margin-top: 140rpx;
+   background: #fff;
+}
+
+.tip{
+    text-align: center;
+    color: #777;
+    display: block;
+    font-size: 28rpx;
+}

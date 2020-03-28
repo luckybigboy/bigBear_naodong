@@ -1,0 +1,9 @@
+<!--pages/index/follow-people/follow-people.wxml-->
+
+<view>
+  <view wx:for="{{followList}}" wx:key="{{index}}" class='list'>
+    <image src='{{item.img}}' class='headimg'></image>
+    <text class='userName'>{{item.userName}}</text>
+    <text space='emsp' class='num'>共有{{item.num}}条新脑洞 ></text>
+  </view>
+</view>

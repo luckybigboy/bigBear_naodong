@@ -1,0 +1,53 @@
+/* pages/editor-cover/editor-cover.wxss */
+.cover-content {
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  padding-left: 32rpx;
+  padding-top: 32rpx;
+  box-sizing: border-box;
+  min-height: 860rpx;
+}
+.cover-content view {
+  width: 208rpx;
+  height: 296rpx;
+  margin-right: 3%;
+  margin-bottom: 32rpx;
+  border:2px solid #fff;
+ 
+}
+.cover-content .show{
+  border-color:#F5A623;
+}
+.cover-content view image {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.cover-content view:first-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:0rpx 0rpx 8rpx 0rpx rgba(0,0,0,0.2);
+}
+.cover-content view:first-of-type image {
+  width: 77rpx;
+  height: 73rpx;
+  border: 0;
+}
+.cover-content .colors {
+  border-color:#F5A623;
+}
+.sendcodebtn[disabled][type="default"],wx-button[disabled]:not([type]){
+  background-color:rgba(245,166,35,0.5);
+  color: #ffffff;
+}
+.btn {
+  display: block;
+  width: 90%;
+  background-color: rgba(245,166,35,1);
+  font-size:38rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  letter-spacing:20rpx;
+}

@@ -1,0 +1,129 @@
+/* pages/my/my-system-news/my-system-news.wxss */
+@import "../../../wxParse/wxParse.wxss";
+
+page{
+  background: #F8F8F8;
+ 
+}
+view {
+    overflow: visible;
+}
+.news_box{
+  padding: 28rpx 40rpx 0rpx 66rpx;
+}
+
+view:nth-child(5) {
+  padding-bottom: 74rpx;
+}
+
+.time{
+  font-size:24rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  text-align: center;
+  padding-top:68rpx;
+} 
+
+.news_content{
+  width: 572rpx;
+  background: #fff;
+  margin: 0 auto;
+  padding-top: 40rpx;
+  padding-left: 72rpx;
+  padding-bottom:46rpx;
+  position: relative;
+  border-radius:20rpx;
+  box-shadow:0rpx 8rpx 18rpx 0rpx rgba(238,238,238,1);
+}
+
+.head_title{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  font-family:PingFang-SC-Regular;
+}
+
+.news_content .message{
+  font-size:28rpx;
+  font-weight:400;
+  margin-top: 32rpx;
+  color:rgba(102,102,102,1);
+  font-family:PingFang-SC-Regular;
+}
+
+.news_content .message view{
+  line-height: 40rpx;
+ 
+}
+
+.underLine{
+  margin-bottom: 5rpx;
+  text-decoration: underline; 
+  display: inline-block;
+}
+
+
+/* .logo_one{
+  position: absolute; 
+  top: 50%;
+  left:  -36rpx;
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: -34rpx
+} */
+
+.logo_two{
+  position: absolute; 
+  top: 47%;
+  left:  -39rpx;
+  width: 72rpx;
+  height: 72rpx;
+  margin-top: -30rpx;
+  border-radius: 50%;
+  border: 5rpx solid orange;
+}
+
+.message{
+  width: 524rpx;
+}
+
+.line{
+  display: inline !important;
+}
+
+.link{
+  text-decoration: underline;
+}
+
+ .noNews{
+    text-align: center;
+}
+
+ .noNews image{
+    width: 378rpx;
+    height: 236rpx;
+    margin: 304rpx auto 88rpx;
+}
+ .noNews view{
+    font-size:32rpx;
+    font-family:PingFang-SC-Regular;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    line-height:44rpx;
+    letter-spacing:2rpx;
+}
+
+.wxParse-a{
+  text-decoration: underline;
+  color: rgba(153,153,153,1);
+}
+
+.tip{
+    text-align: center;
+    color: #777;
+    display: block;
+    padding: 25rpx 0;
+    padding-bottom: 40rpx;
+    font-size: 28rpx;
+}

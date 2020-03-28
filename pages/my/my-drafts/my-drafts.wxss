@@ -1,0 +1,118 @@
+/* pages/my/my-drafts/my-drafts.wxss */
+
+ .container{
+   height: 100vh;
+ }
+
+.touch-item {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #BCBBC1;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  padding: 16rpx 0rpx 16rpx 32rpx;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  margin-left: -90px;
+  background: #fff;
+  position: relative;
+}
+
+.title {
+  display: block;
+}
+
+.titleStyle1 {
+  font-size: 34rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  width: 578rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titleStyle2 {
+  font-size: 30rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.angleImg {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 45rpx;
+  top: 50rpx;
+}
+
+.del {
+  background-color: #ff3b30;
+  width: 180rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  font-size: 34rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  letter-spacing: 3rpx;
+}
+
+.touch-move-active .content, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.noNews {
+  text-align: center;
+}
+
+.noNews image {
+  width: 378rpx;
+  height: 236rpx;
+  margin: 304rpx auto 88rpx;
+}
+
+.noNews .title text:nth-of-type(1) {
+  font-size: 32rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 44rpx;
+  letter-spacing: 2rpx;
+}
+
+.noNews .title text:nth-of-type(2) {
+  font-size: 32rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(245, 166, 35, 1);
+  line-height: 44rpx;
+  letter-spacing: 2rpx;
+  margin-left: 20rpx;
+}
+
+.tip{
+    text-align: center;
+    color: #777;
+    display: block;
+    padding: 25rpx 0;
+    padding-bottom: 40rpx;
+    font-size: 28rpx;
+}

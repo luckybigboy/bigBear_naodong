@@ -1,0 +1,55 @@
+/* pages/my/my-setting-about/my-setting-about.wxss */
+.Login {
+  text-align: center;
+  padding-top: 154rpx;
+}
+
+.Login .img-arrow {
+  width: 136rpx;
+  height: 136rpx;
+}
+
+.about-Content {
+  text-align: center;
+  padding-top: 15rpx;
+}
+
+.about-Content p {
+  color: #333;
+  font-size: 34rpx;
+  font-weight: 600;
+  padding-top: 24rpx;
+}
+
+.about-Content view {
+  color: #333;
+  font-size: 28rpx;
+  padding-top: 24rpx;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 560rpx;
+}
+
+.footer p {
+  color: #174C8A;
+  font-size: 24rpx;
+}
+
+.footer p span {
+  color: #333;
+}
+
+.footer .Copyright {
+  color: #999;
+  font-size: 24rpx;
+  padding-top:24rpx;
+}
+
+.footer .day {
+  color: #999;
+  font-size: 24rpx;
+  padding-top:4rpx;
+  padding-bottom: 48rpx;
+}

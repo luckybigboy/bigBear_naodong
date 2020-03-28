@@ -1,0 +1,20 @@
+/* pages/my/my-choose-face/my-choose-face.wxss */
+
+.choose{
+  padding: 38rpx 32rpx;
+}
+.choose:last-child{
+  border-bottom: 1rpx solid #BCBBC1;
+}
+.title {
+  font-size: 34rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.angleImg{
+     width: 28rpx;
+     height: 28rpx;
+}
+.fr{
+  float: right;
+}

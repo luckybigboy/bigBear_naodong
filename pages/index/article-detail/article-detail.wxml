@@ -1,0 +1,123 @@
+<!--pages/index/article-detail/article-detail.wxml-->
+<image class='backgroundImg' src='{{backgroundImg}}'></image>
+<view class='head' style='height:{{barHeight}}px;'>
+  <image src="../../../images/icon-back.png" bindtap='goback'></image>
+  <text>{{articleList[0].article_title}}</text>
+</view>
+<view class='container' hidden='{{hidden}}'>
+  <!-- 顶部悬浮作者信息卡片 -->
+  <view class="user" style='margin-top:{{barHeight}}px;'>
+    <view class="userinfo">
+      <image class='userimg' src="{{articleList[current].user_image}}" />
+      <text class="userName">{{articleList[current].user_name}}</text>
+      <text class="author" style="display:{{article.isFans==0?'block':'none'}}" catchtap="follow_author">关注作者</text>
+      <text class="author" style="display:{{article.isFans==1?'block':'none'}}" catchtap="follow_author">已关注</text>
+      <image src='../../../images/index/ellipsis-v.png' class='ellipsis' bindtap='foot' ></image>
+    </view>
+    <progress class="progress-outer" percent="{{progress}}" stroke-width="5" color="#F5A623" border-radius="5" />
+    <view class="userimglist">
+      <image src="{{item.imgsrc}}" wx:for="{{floorList}}" wx:key="index" />
+    </view>
+  </view>
+  <!-- 右侧悬浮菜单 -->
+  <view class='right-suspension'>
+    <view class='suspension-star' catchtap='collect_brain'>
+      <image src='../../../images/index/star.png' wx:if="{{article.isCollection == 0}}"></image>
+      <image src='../../../images/index/star-light.png' wx:if="{{article.isCollection == 1}}"></image>
+    </view>
+    <view>
+      <button open-type="share" style='overflow:unset !important;padding:0px !important;background:white;height:44rpx;'>
+        <image src='../../../images/index/share.png'></image>
+      </button>
+    </view>
+  </view>
+  <!-- 楼层 -->
+  <image class='left-arrow' src="../../../images/index/left-arrow.png" wx:if="{{swiperType}}" class="left-arrow" bindtap="toUp" />
+  <image class='right-arrow' src="../../../images/index/right-arrow.png" wx:if="{{swiperType}}" class="right-arrow" bindtap="down" />
+  <swiper next-margin='240rpx' vertical='true' style='margin-top:{{barHeight+100}}px;height:{{floor_height}}px;' bindchange="swiperChange" current='{{current}}'>
+    <block wx:for="{{articleList}}" wx:key="{{index}}">
+      <swiper-item wx:if="{{index == 0}}">
+        <view class="articleList">
+          <view class="tower">
+            <label>{{item.class_name}}</label>
+            <text>{{index+1}}楼</text>
+          </view>
+          <view class="content">
+            <text space='nbsp'>    {{item.article_content}}</text>
+          </view>
+          <view class="foot">
+            <view catchtap="fill_brain_hole">
+              <image src="../../../images/index/write.png" />
+              <text>填脑洞</text>
+            </view>
+            <view catchtap="comment">
+              <image src="../../../images/index/message.png" />
+              <text>{{item.article_comment_num}}</text>
+            </view>
+            <view catchtap='liked_brain'>
+              <image src="../../../images/index/love.png" wx:if="{{item.isFabulous == 0}}" />
+              <image src='../../../images/index/love-red.png' wx:if="{{item.isFabulous == 1}}"></image>
+              <text wx:if="{{item.article_fabulous_num > 1000}}">{{item.article_fabulous_num/1000}}k</text>
+              <text wx:if="{{item.article_fabulous_num < 1000}}">{{item.article_fabulous_num}}</text>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item wx:if="{{index > 0}}">
+        <swiper style='height:760rpx;' bindchange="swiperChange2" current='{{current2[index]}}'>
+          <block wx:for="{{branchList[index]}}" wx:key="{{index}}" wx:for-index="index2" wx:for-item="item2">
+            <swiper-item>
+              <view class="articleList">
+                <view class="tower">
+                  <label>{{item2.class_name}}</label>
+                  <text>{{index+1}}楼</text>
+                </view>
+                <view class="content">
+                  <text space='nbsp'>    {{item2.article_content}}</text>
+                </view>
+                <view class="foot">
+                  <view catchtap="fill_brain_hole">
+                    <image src="../../../images/index/write.png" />
+                    <text>填脑洞</text>
+                  </view>
+                  <view catchtap="comment">
+                    <image src="../../../images/index/message.png" />
+                    <text>{{item2.article_comment_num}}</text>
+                  </view>
+                  <view catchtap='liked_brain'>
+                    <image src="../../../images/index/love.png" wx:if="{{item2.isFabulous == 0}}" />
+                    <image src='../../../images/index/love-red.png' wx:if="{{item2.isFabulous == 1}}"></image>
+                    <text wx:if="{{item2.article_fabulous_num > 1000}}">{{item2.article_fabulous_num/1000}}k</text>
+                    <text wx:if="{{item2.article_fabulous_num < 1000}}">{{item2.article_fabulous_num}}</text>
+                  </view>
+                </view>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <view class='nextarticle' catchtap='goNextActicle' wx:if="{{articleList.length > 0}}">
+    <view>进入下一个脑洞</view>
+    <image src='../../../images/index/arrow_two.png' style='width: 40rpx;height: 40rpx;'></image>
+  </view>
+</view>
+<!-- 填脑洞 -->
+<view class="content-textarea" hidden='{{!hidden}}'>
+  <view class="brain_hole">
+    <text class='quxiao'>取消</text>
+    <image src="../../../images/initiate/tuo.png" alt="" catchtap="hiddenComment" />
+    <text catchtap="release_comment" class='release_comment'>发布</text>
+  </view>
+  <editor id="editor" class="ql-container" focus='{{focus}}' placeholder="正文" bindinput="editorInput">
+  </editor>
+  <!-- <textarea maxlength="150" adjust-position="true" focus='{{focus}}' placeholder="正文" show-confirm-bar bindinput="editorInput"></textarea> -->
+  <view class='brain_hole_foot' style='margin-top:20rpx;'>
+    <view>{{current+1}}楼</view>
+    <view>{{brain_content.length}}/150</view>
+  </view>
+</view>
+<!-- 底部列表弹窗 -->
+<footnav id="footnav" nav1="{{footNav1}}" bind:clickOn="navClick" nav2="{{footNav2}}"></footnav>

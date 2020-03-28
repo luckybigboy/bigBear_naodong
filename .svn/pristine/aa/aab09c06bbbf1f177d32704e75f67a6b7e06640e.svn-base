@@ -1,0 +1,10 @@
+<!--pages/my/my-set-profile/my-set-profile.wxml-->
+<view class='box'>
+      <textarea name="" id="txtarea" placeholder="介绍一下你自己" 
+      bindinput='inputs' 
+      minlength="{{min}}" maxlength="{{max}}"
+      ></textarea>
+      <span class="wordScore" id="wordScore">{{ wordScore }}/30</span>
+</view>
+
+<button class='submit' bindtap='submit' disabled = '{{ isbool }}' type='primary'>确定</button>

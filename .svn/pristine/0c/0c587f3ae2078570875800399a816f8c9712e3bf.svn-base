@@ -1,0 +1,53 @@
+<!--pages/index/comment-detail/comment-detail.wxml--> 
+<view class='head' style='height:{{barHeight}}px;'>
+  <image src='{{backgroundImg}}' class='backgroundImg'></image>
+  <image src="../../../images/icon-back.png" bindtap='goback' class='back'></image>
+  <text>{{param.article_title}}</text>
+</view>
+<scroll-view hidden='{{hidden}}' bindscrolltolower="loadMore">
+  <!-- 顶部悬浮view -->
+  <view class="comment_head" style='margin-top:{{barHeight}}px;'>
+    <image src="../../../images/index/wrong_x.png" />
+    <text>全部{{replyList.length}}条评论</text>
+  </view>
+  <!-- 评论列表内容 -->
+  <view class="comment_list" style='margin-top:{{barHeight+30}}px;'>
+    <view class="comment">
+      <view bindtap='comment_detail'>
+        <image src="{{comment.user_image}}" class='user-image' />
+        <text class='userName'>{{comment.user_name}}</text>
+        <text class='time'>{{comment.comment_add_time}}</text>
+        <view class="comment_content">
+          {{comment.comment_content}}
+        </view>
+      </view>
+      <text class="foot" catchtap="reply">回复</text>
+    </view>
+    <view class="reply" wx:for="{{replyList}}" wx:key="index">
+      <view bindtap='comment_detail'>
+        <image src="{{item.user_image}}" class='user-image' />
+        <text class='userName'>{{item.user_name}}</text>
+        <text class='time'>{{item.comment_add_time}}</text>
+        <view class="comment_content">
+          {{item.comment_content}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 底部悬浮 -->
+  <view class="footer" catchtap="comment">
+    <text class='add-comment'>嘿！盆友~欢迎来到归一，这里可以和世界各</text>
+    <text class='release'>发布</text>
+  </view>
+</scroll-view>
+
+<!-- 发布评论 -->
+<view class="content-textarea" hidden='{{!hidden}}'>
+  <image src="../../../images/initiate/tuo.png" alt="" catchtap="hiddenComment" />
+  <view class="title">
+    <text space='emsp'>评论给 </text>
+    <text class="author">{{comment.user_name}}（作者）</text>
+  </view>
+  <textarea maxlength="150" placeholder-class="textareaPlaceolder" adjust-position="true" focus='{{focus}}' placeholder="嘿！盆友~欢迎来到归一，着这里可以和世界各地的盆友们共同创造出各种脑洞新奇小故事。" show-confirm-bar bindinput="textareaInput"></textarea>
+  <text catchtap="release_comment" class='release_comment'>发布</text>
+</view>

@@ -1,0 +1,24 @@
+<view wx:if="{{status}}">
+  <view class='nav-mask'>
+    <view class='mask' animation="{{animation}}" bindtap='hide'></view>
+    <view class='nav-model' animation="{{animationUp}}">
+      <view class='ul'>
+        <view class='li' style='color:{{item.color}}' wx:for="{{nav1}}" data-name="{{item.name}}" wx:key bindtap="{{item.bind==true?'openTwo':'clickOn'}}">{{item.name}}</view>
+      </view>
+
+      <view class='ul'>
+        <view class='li close' bindtap='cancel'>取消</view>
+      </view>
+    </view>
+
+    <view class='nav-model' animation="{{animationUp1}}">
+      <view class='ul'>
+        <view class='li' style='color:{{item.color}}' bindtap='clickOn' data-name="{{item.name}}" wx:for="{{nav2}}" wx:key>{{item.name}}</view>
+      </view>
+
+      <view class='ul'>
+        <view class='li close' bindtap='closeTwo'>取消</view>
+      </view>
+    </view>
+  </view>
+</view>

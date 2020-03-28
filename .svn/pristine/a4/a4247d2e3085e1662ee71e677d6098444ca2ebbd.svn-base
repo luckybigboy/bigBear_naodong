@@ -1,0 +1,83 @@
+<view class='head'>
+  <view class='head_left'>
+    <image src="../../../images/index/funnel.png" class='funnel' catchtap='funnel' />
+  </view>
+  <view class='center'>
+    <text class="{{selType == true?'sel':'nosel'}}" catchtap="typeSel">精选</text>
+    <text class="{{selType == false?'sel':'nosel'}}" catchtap="typeSel">关注</text>
+  </view>
+  <view class='head_right'>
+    <image src="../../../images/index/search.png" class='search' bindtap='search' />
+  </view>
+</view>
+<view class='content'>
+  <!-- 精选 -->
+  <view wx:if="{{selType}}" class="select">
+    <swiper previous-margin="140rpx" next-margin='200rpx' bindchange="swiperChange" current='{{current}}'>
+      <block wx:for="{{brain_hole_List}}" wx:key="{{index}}">
+        <swiper-item>
+          <image mode="aspectFill" src="{{item.article_image}}" class="{{current == index?'active':''}}"  />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 进度条 -->
+    <progress class="progress-outer" percent="{{progress}}" stroke-width="7" color="#F5A623" border-radius="5" />
+    <view class="slide-end">
+      <image style='margin-left: 40rpx;' src="{{item.user_image}}" />
+      <label>{{article.user_name}}</label>
+      <view class="userImgList">
+        <view style='width: 11%;float:left;text-align:right;' wx:for="{{floorList}}" wx:key="{{index}}" wx:for-index="index">
+          <image src="{{item.imgsrc}}" />
+        </view>
+      </view>
+    </view>
+    <!-- 左侧样式 -->
+    <view class="left-side" style='height:{{height}}rpx;'> </view>
+    <view class="middle">
+      <view class="card-article">
+        <view class="card-title">
+          <label>{{article.class_name}}</label>
+          <label>{{article.article_title}}</label>
+        </view>
+        <view class="card-content">
+          <text space='emsp'>  {{article.article_content}}</text>
+          <a catchtap="goArticleDetail">查看完整脑洞</a>
+        </view>
+      </view>
+      <!-- 顶部悬浮菜单 -->
+      <view class="positiontop" wx:if='{{positiontop}}' animation="{{menu}}">
+        <view value="all" checked="true">
+          <text catchtap='segment' id='0' class='{{segmentType[0] == true?"segmentType":"segmentType2"}}'>全部</text>
+        </view>
+        <view value="unfinished">
+          <text catchtap="segment" id='1' class='{{segmentType[1] == true?"segmentType":"segmentType2"}}'>未完结</text>
+        </view>
+        <view value="finish">
+          <text catchtap="segment" id='2' class='{{segmentType[2] == true?"segmentType":"segmentType2"}}'>已完结</text>
+        </view>
+      </view>
+    </view>
+    <!-- 右侧样式 -->
+    <view class="right-side" style='height:{{height}}rpx;'> </view>
+  </view>
+  <!-- 关注 -->
+  <view wx:if="{{!selType}}" class="focus"> 
+    <view wx:if="{{focusList.length > 0}}">
+      <view class="user">
+        <image src="../../../images/index/arrow.png" slot="start" class="headimage" />
+        <view slot="end" class="right" catchtap='follow'>
+            <label>共有10条新脑洞 ></label>
+        </view>
+      </view>
+      <view class="focusList" wx:for="{{focusList}}" wx:key="{{index}}" wx:for-index="index">
+        <view class="first">{{item.title}}</view>
+        <view style='margin-bottom:20rpx;'>{{item.content}}</view>
+        <view style="font-size:24rpx;color:rgba(153,153,153,1);">已更到{{item.num}}楼</view>
+      </view>
+    </view>
+    <view wx:if="{{focusList.length == 0 || focusList == ''}}" class='empty'>
+      <image src='../../../images/index/empty.png'></image>
+      <view>嘿~你的关注现在空空如也</view>
+    </view>
+  </view>
+</view> 

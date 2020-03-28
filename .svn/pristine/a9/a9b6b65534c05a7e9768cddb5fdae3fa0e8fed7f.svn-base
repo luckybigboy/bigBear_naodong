@@ -1,0 +1,304 @@
+/* pages/index/home/home.wxss */
+page {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family:PingFangSC-Semibold;
+  font-weight: 400;
+}
+.head {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  width: 100%;
+  background-color: white;
+  z-index: 99999;
+}
+.head_left {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+.funnel {
+  float: left;
+  width: 56rpx;
+  height: 56rpx;
+  margin-top: 16rpx;
+  margin-left: 24rpx;
+}
+
+.search {
+  float: right;
+  width: 56rpx;
+  height: 56rpx;
+  margin-top: 16rpx;
+  margin-right: 24rpx;
+}
+.head_right {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+.center {
+  width: 60%;
+  float: left;
+}
+.center text {
+  margin: 0 14%;
+}
+.sel {
+  text-align: center;
+  font-size: 36rpx;
+  color:#F7A700;
+  padding-bottom: 20rpx;
+  border-bottom: 4rpx solid #F7A700;
+  padding: 16rpx;
+}
+.nosel {
+  font-size: 32rpx;
+  font-family:PingFangSC-Semibold;
+  color:#333333;
+  padding: 16rpx;
+}
+.segmentType {
+  color:#F7A700;
+}
+.segmentType2 {
+  color: #333333;
+}
+.content {
+  line-height: 60rpx;
+  width: 100%;
+}
+
+.select {
+  width: 100%;
+  /* height: 740rpx;  */
+}
+.select .left-side {
+  height: 100%;
+  width: 5%;
+  box-shadow: 0rpx 0rpx 10rpx 2rpx #f1f1f1;
+  float: left;
+}
+
+.progress-outer {
+  clear: both;
+  width: 78%;
+  margin: 20rpx 11%;
+  text-align: center;
+  color: #fff;
+  border-radius: 40rpx;
+  position: absolute;
+  top: 275rpx;
+}
+
+.slide-end {
+  position: absolute;
+  top: 200rpx;
+  width: 84%;
+  left: 8%;
+  box-shadow: 0rpx 0rpx 10rpx 0rpx #ccb790;
+  height: 180rpx;
+  text-align: center;
+  z-index: 2;
+}
+.slide-end image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 40rpx;
+  margin-top: 20rpx;
+}
+.slide-end label {
+  position:absolute;
+  top: 20rpx;
+  margin-left: 16rpx;
+  font-size: 24rpx;
+}
+.slide-end .userImgList {
+  width: 97%;
+  padding: 10rpx 0rpx;
+  justify-content: space-between;
+}
+.slide-end .userImgList image {
+  /* float: left; */
+  /* margin-right: 4%; */
+  width: 40rpx;
+  height: 40rpx; 
+}
+.middle {
+  float: left;
+  width: 84%;
+  margin-left: 3%;
+}
+.card-article {
+  box-shadow: 0rpx 0rpx 10rpx 0rpx #ccb790;
+  margin-bottom: 48rpx;
+  padding-bottom: 36rpx;
+}
+.card-title {
+  text-align: center;
+  font-size: 40rpx;
+  padding: 32rpx 20rpx 0rpx 20rpx;
+  word-wrap: break-word;
+}
+.card-title label:first-of-type {
+  border: 2rpx solid #8E7037;
+  padding: 1rpx 20rpx;
+  color: #8E7037;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+.card-content {
+  padding: 24rpx 40rpx 0 40rpx;
+  color: #333333;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.card-content a {
+  color: #666666;
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}
+.card-title label {
+  font-size: 40rpx;    
+}
+.positiontop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: white;
+  opacity: 0.8;
+  width: 100%;
+  height: 88rpx;
+  margin-top: 88rpx;
+  transition: all 0.5s;
+}
+.positiontop view {
+  width: 33%;
+  height: 88rpx;
+  line-height: 88rpx;
+  float: left;
+  text-align: center;
+  font-size: 32rpx;
+}
+.segment {
+  color:#F5A623;
+  border: 0rpx;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100%;
+}
+.label {
+  color: black;
+  font-size: 30rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-top: 0;
+}
+.label {
+  color: #F5A623;
+}
+.right-side {
+  height: 100%;
+  width: 5%;
+  box-shadow: 0rpx 0rpx 10rpx 2rpx #f1f1f1;
+  float: left;
+  margin-left: 3%;
+}
+swiper {
+  width: 100%;
+  height: 420rpx;
+  position: relative;
+  z-index: 9999 !important;
+  margin-top: 100rpx;
+}
+swiper-item {
+  padding-top: 10rpx;
+  /* width: 140rpx !important;
+  height: 152rpx !important; */
+  
+  width: 208rpx !important;
+  height: 278rpx !important;
+  text-align: center;
+}
+swiper-item image {
+  width: 112rpx !important;
+  height: 152rpx !important;
+  border-radius: 0rpx 10rpx 10rpx 0rpx;
+  box-shadow: 0rpx 0rpx 8rpx 1.5rpx rgba(102,102,102,0.5);
+}
+.active {
+  width: 190rpx !important;
+  height: 270rpx !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  margin-top: 0rpx !important;
+  transition: all 0.2s ease-in 0s;
+  border-radius: 0rpx 20rpx 20rpx 0rpx;
+  box-shadow: 0px 0px 8rpx 2rpx rgba(102,102,102,0.5);
+}
+.focus {
+  background-color: #f8f8f8;
+  height: 100%;
+  margin-top: 102rpx;
+}
+.user {
+  background-color: white;
+  margin-bottom: 24rpx;
+  height: 120rpx;
+}
+
+.user .headimage {
+  position: absolute;
+  float: left;
+  border-radius: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx 0rpx;
+}
+.right {
+  height: 120rpx;
+  line-height: 120rpx;
+  float: right;
+}
+.right label {
+  font-size: 30rpx;
+  color:rgba(153,153,153,1);
+  margin-right: 24rpx;    
+}
+.right image {
+  width: 36rpx;
+  height: 36rpx;    
+  position: absolute;
+  right: 24rpx;
+  top: 36rpx;
+}
+.focusList {
+  background-color: white;
+  margin-bottom: 20rpx;
+  padding: 20rpx 46rpx;
+}
+.focusList view {
+  color: #333333;
+  font-size: 34rpx;
+  line-height: 50rpx;
+}
+.focusList .first {
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+.empty {
+  text-align: center;
+  background: white;
+}
+.empty image {
+  width: 400rpx;
+  margin-top: 230rpx;
+  height: 400rpx;
+}

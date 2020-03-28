@@ -1,0 +1,73 @@
+{
+  "pages": [
+   
+    "pages/my/my-index/my-index",
+    "pages/index/home/home",
+    "pages/my/my-message-inform/my-message-inform",
+    "pages/my/my-attention/my-attention",
+    "pages/index/article-detail/article-detail",
+    "pages/index/comment-detail/comment-detail",
+    "pages/index/comment-list/comment-list",
+    "pages/index/follow-people/follow-people",
+    "pages/index/index-search/index-search",
+    "pages/my/my-mine/my-mine",
+    "pages/my/my-blacklist/my-blacklist",
+    "pages/login/login",
+    "pages/my/my-others/my-others",
+    "pages/my/my-setting/my-setting",
+    "pages/my/my-setting-about/my-setting-about",
+    "pages/my/my-setting-protocol/my-setting-protocol",
+    "pages/my/my-fan/my-fan",
+    "pages/my/my-edit-title/my-edit-title",
+    "pages/edit/editor-title/editor-title",
+    "pages/edit/editor-cover/editor-cover",
+    "pages/edit/editor-text/editor-text",
+    "pages/my/my-system-news/my-system-news",
+    "pages/my/my-set-profile/my-set-profile",
+    "pages/my/my-user-know/my-user-know",
+    "pages/my/my-drafts/my-drafts",
+    "pages/edit/editor-picture/editor-picture",
+    "pages/edit/editor-choose-faces/editor-choose-faces"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "脑洞大大开",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "backgroundColor": "#F7F7F7",
+    "color": "#666666",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "iconPath": "images/tabs/tab1.png",
+        "selectedIconPath": "images/tabs/tab11.png",
+        "pagePath": "pages/index/home/home",
+        "text": "发现"
+      },
+      {
+        "iconPath": "images/tabs/tab2.png",
+        "selectedIconPath": "images/tabs/tab22.png",
+        "pagePath": "pages/edit/editor-title/editor-title",
+        "text": "开脑洞"
+      },
+      {
+        "iconPath": "images/tabs/tab3.png",
+        "selectedIconPath": "images/tabs/tab33.png",
+        "pagePath": "pages/my/my-index/my-index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "点击度确定"
+    }
+  }
+}

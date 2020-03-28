@@ -1,0 +1,64 @@
+<!--pages/index/index-search/index-search.wxml-->
+
+<!-- 搜索头部 -->
+<view class='search-header'>
+  <view class="{{status == true ? 'search-left':' '}}">
+    <image src="/images/initiate/Search.png" />
+    <input bindfocus='inFo' bindblur='outFo' value='{{searchs}}' bindinput='watchInput' />
+  </view>
+  <button class="{{status == true ? 'search-btn':' '}}" bindtap='cancels'>取消</button>
+</view>
+
+<!-- 搜索提示 -->
+<view class="{{tip == false ? 'search-tips':' '}}">
+  <view class='hot-title'>热门搜索</view>
+  <view class='search-hot'>
+    <text wx:for = "{{searchHot}}" wx:key bindtap='clickHot' data-h="{{item.article_title}}">{{item.article_title}}</text>
+  </view>
+  <view class='hot-title'>
+    搜索记录
+    <image src='/images/initiate/del.png' bindtap='deletes'/>
+  </view>
+  <view class='search-hot'>
+    <text wx:for = "{{searchRecord}}" wx:key bindtap='clickHot' data-h="{{item}}">{{item}}</text>
+  </view>
+</view>
+
+
+<!-- 搜索到的用户 -->
+<view class="search-content {{user == true ? 'searchUser':' '}}">
+  <view class='search-user' wx:if="{{num>0}}">
+    <view class='user-left'>
+      <view wx:for="{{userList}}" wx:key>
+        <image src="{{url+item.user_image}}"/>
+      </view>
+    </view>
+    <view class='user-right' bindtap='clickState'>
+      相关用户（{{num}}+）
+      <image src='/images/my/icon-rjt.png' />
+    </view>
+  </view>
+
+  <!-- 搜索到的列表 -->
+  <view class='search-list' wx:for="{{searchList}}" data-id="{{item.article_id}}" wx:key bindtap='goDetail'>
+    <text>{{item.article_title}}</text>
+    <text>{{item.article_content}}</text>
+    <text>已更到{{item.article_floor}}楼</text>
+  </view>
+</view>
+
+
+<!-- 搜索到的用户列表 -->
+<view class="search-userList '{{state == true ? 'listBlock':' '}}'">
+  <view class='userList' wx:for="{{userList}}" wx:key data-id='{{item.user_id}}' bindtap="goOthers">
+    <view class='userList-left'>
+      <image src='{{url+item.user_image}}' />
+      <text>{{item.user_name}}</text>
+    </view>
+    <view class='userList-right'>
+      <text>共{{item.article_num}}条脑洞</text>
+      <image src='/images/my/icon-rjt.png' />
+    </view>
+  </view>
+</view>
+

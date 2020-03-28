@@ -1,0 +1,57 @@
+/* component/foot-nav/foot-nav.wxss */
+
+.nav-mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+}
+.mask{
+position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.nav-model {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  z-index: 1
+}
+
+.ul {
+  border-radius: 28rpx;
+  text-align: center;
+  margin: 0 20rpx;
+  margin-bottom: 20rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.li {
+  padding: 32rpx 0;
+  width: 100%;
+  display: block;
+  background: #e6e6e7;
+  border-bottom: 1px solid #3f3f3f;
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+}
+
+.ul .li:last-child {
+  border: hidden;
+}
+
+.close{
+  background: #fff;
+  color: #007AFF;
+}

@@ -1,0 +1,68 @@
+<!--pages/index/comment-list/comment-list.wxml-->
+<view class='head' style='height:{{barHeight}}px;'>
+  <image src='{{backgroundImg}}' class='backgroundImg'></image>
+  <image src="../../../images/icon-back.png" class='back' bindtap='goback'></image>
+  <text>{{article.article_title}}</text>
+</view>
+<scroll-view hidden='{{hidden}}' scroll-y style='height:{{scrollHeight}}px;' bindscrolltolower="loadMore">
+  <!-- 顶部悬浮view -->
+  <view class="comment_head" style='margin-top:{{barHeight}}px;'>
+    <image src="../../../images/index/wrong_x.png" />
+    <text>全部{{commentList.length}}条评论</text>
+  </view>
+  <!-- 评论列表内容 -->
+  <view class="comment_list" wx:if="{{commentList.length > 0}}">
+    <view class="comment" wx:for="{{commentList}}" wx:key="index">
+      <view id='{{index}}' bindtap='comment_detail'>
+        <image src="{{item.user_image}}" class='user-image' />
+        <text class='userName'>{{item.user_name}}</text>
+        <!-- <image src="{{item.commentImage}}" class="report" /> -->
+        <text class='time'>{{item.comment_add_time}}</text>
+        <view class="comment_content">
+          {{item.comment_content}}
+        </view>
+      </view>
+      <view class='reply' id='{{index}}' wx:if="{{item.reply && item.reply.length > 0}}"> 
+        <view class='reply_content' id='{{index}}' bindtap='reply_delete1'>
+          <text class='replyUser'>{{item.reply[0].user_name}}：</text>
+          <text>{{item.reply[0].comment_content}}</text>
+        </view>
+        <view class='reply_content' id='{{index}}' wx:if="{{item.reply[1]}}" bindtap='reply_delete2'>
+          <text class='replyUser'>{{item.reply[1].user_name}} </text>回复
+          <text class='replyUser'>{{item.reply[1].user_name}}：</text>
+          <text>{{item.reply[1].comment_content}}</text>
+        </view>
+        <view class='reply_content' wx:if="{{(item.reply.length-2)>0}}">
+          <text class='replyUser'>共{{item.reply.length}}条评论＞</text>
+        </view>
+      </view>
+      <text class="foot" catchtap="reply">回复</text>
+    </view>
+  </view>
+  <!-- 评论为空时 -->
+  <view class="empty" wx:if="{{commentList.length == 0 || commentList == null}}">
+    <image src="../../../images/index/empty.png" />
+    <view>快来抢沙发吧～</view>
+  </view>
+</scroll-view>
+
+<!-- 底部悬浮 -->
+<view class="footer" catchtap="comment">
+  <view style='float:left;width:80%;margin-left:34rpx;text-align:center;'>
+    <text class='add-comment'>{{commentTip}}</text>
+  </view>
+  <text class='release'>发布</text>
+</view>
+<!-- 底部列表弹窗 -->
+<footnav id="footnav" nav1="{{footNav1}}" bind:clickOn="navClick" nav2="{{footNav2}}"></footnav>
+  <!-- 发布评论 -->
+<view class="content-textarea" hidden='{{!hidden}}'>
+  <image src="../../../images/initiate/tuo.png" alt="" catchtap="hiddenComment" />
+  <view class="title">
+    <text space='emsp'>评论给 </text>
+    <text class="author">{{author}}（作者）</text>
+  </view>
+  <textarea maxlength="150" placeholder-class="textareaPlaceolder" adjust-position="true" focus='{{focus}}' placeholder="嘿！盆友~欢迎来到归一，着这里可以和世界各地的盆友们共同创造出各种脑洞新奇小故事。" show-confirm-bar bindinput="textareaInput"></textarea>
+  <view class='zishu'>{{comment_content.length}}/150</view>
+  <text catchtap="release_comment" class='release_comment'>发布</text>
+</view>

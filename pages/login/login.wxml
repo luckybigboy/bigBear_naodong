@@ -1,0 +1,5 @@
+<view class='login'>
+  <image src='/images/my/login.png'></image>
+  <text>需要登陆才能继续操作</text>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+</view>

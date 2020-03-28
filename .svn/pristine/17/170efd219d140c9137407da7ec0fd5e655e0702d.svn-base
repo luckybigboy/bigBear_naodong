@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "footnav": "/component/foot-nav/foot-nav"
+  },
+  "navigationStyle": "custom",
+  "disableScroll": true
+}

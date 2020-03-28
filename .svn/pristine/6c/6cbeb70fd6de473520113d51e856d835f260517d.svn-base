@@ -1,0 +1,42 @@
+<!-- pages/my/my-message-inform/my-message-inform.wxml -->
+<view class='head_box' bindtap='toMySystemNews'>
+  <image src='../../../images/my/my-logo.png' class='logo'></image>
+  <text>官方通知</text>
+  <view class='circle' wx:if="{{ code }}"></view>
+  <image src='../../../images/my/icon-rjt.png' class='angleImg fr'></image>
+</view>
+
+<scroll-view bindscrolltolower='lower' scroll-y='true' class='container' style='height:{{ srcHeight }}px'>
+  <view class='messageContainer' wx:if="{{ list.length > 0 }}">
+    <view class='message_item' wx:for="{{ list }}" wx:key="">
+      <image src='{{  item.user_image }}' class='logoImg'></image>
+      <view class='comment_style'>
+        <text class='fzEight fzStyle'>{{ item.user_name }}</text>
+        <image src='../../../images/my/heart.png' class='heartImg' wx:if="{{ item.message_type == '点赞' ? true : false }}"></image>
+        <text class='behaviorText'>{{ item.message_type }}</text>
+        <view class='name2 fzStyle fzEight' wx:if="{{ item.message_type != '关注' }}">
+                       {{ !item.message_comment && (item.message_type == '点赞' || item.message_type == '收藏') ? '我的脑洞' : item.message_comment }}
+         </view>
+         <view class='name2 fzStyle fzEight' wx:if="{{ item.message_type == '关注' }}">
+                       {{ !item.message_comment && item.message_type == '关注' ? '我' : item.message_comment  }}
+        </view>
+      </view>
+      <view class='rightContent'>
+        <text wx:if="{{ item.message_type != '收藏' ? true : false }}">{{ !item.message_article ? '' : item.message_article}}</text>
+        <image src='{{ item.message_article }}' wx:if="{{ item.message_type == '收藏' ? true : false }}" class='collectImg'></image>
+      </view>
+    </view>
+
+    <text wx:if="{{list.length==total0}}" class='tip'>已无更多数据</text>
+    <text wx:else class='tip'>正在加载...</text>
+  </view>
+
+
+
+  <view class='message_bodyer'>
+    <view class='noNews' wx:if="{{ list.length == 0 }}">
+      <image src='../../../images/default-my.png'></image>
+      <view>空空如也~</view>
+    </view>
+  </view>
+</scroll-view>

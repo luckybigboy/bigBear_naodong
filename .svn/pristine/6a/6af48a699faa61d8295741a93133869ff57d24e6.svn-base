@@ -1,0 +1,106 @@
+/* pages/editor-title/editor-title.wxss */
+/* 输入标题 */
+.write-title {
+  display: -webkit-flex;
+  align-items: center;
+}
+.write-title input{
+  display: inline-block;
+  width: 70%;
+  padding: 18rpx 40rpx;
+  caret-color: #F5A623;
+  font-size:36rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:50rpx;
+}
+input::-webkit-input-placeholder{
+  font-size:36rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:50rpx;
+  padding: 18rpx 40rpx;
+}
+.write-title button{
+  display: inline-block;
+  font-size:26rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:40rpx;
+  padding: 5rpx 8rpx;
+  background:rgba(142,112,55,1);
+  border-radius:8rpx;
+}
+/* 设置不可用状态的背景色 */
+.sendcodebtn[disabled][type="default"],wx-button[disabled]:not([type]){
+  background-color:rgba(142,112,55,0.5);
+  color: #ffffff;
+}
+.nums {
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+  text-align: right;
+  padding-right: 40rpx;
+}
+
+/* 选择标签 */
+.classification {
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+  padding-left: 40rpx;
+  margin: 20rpx 0;
+}
+.labels{
+  padding-left: 40rpx;
+}
+.labels text{
+  display: inline-block;
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(142,112,55,1);
+  border:1rpx solid rgba(142,112,55,1);
+  padding: 3rpx 14rpx;
+  margin-right: 7%;
+  margin-bottom: 40rpx;
+  opacity: 0.5;
+}
+@media screen and (max-width: 320px) {
+   .labels text {
+       margin-right: 9%;
+    }
+}
+.labels .show{
+  opacity: 1;
+}
+
+/* 选择热门标题 */
+.hot-title{
+  padding-left: 40rpx;
+  margin: 0;
+}
+.hot-title text{
+  display: inline-block;
+  font-size:30rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:40rpx;
+  margin-right: 60rpx;
+  margin-top: 40rpx;
+}
+.hot-title text:first-of-type{
+  color:rgba(142,112,55,1);
+  line-height:40rpx;
+  display: block;
+  margin-top: 0;
+}

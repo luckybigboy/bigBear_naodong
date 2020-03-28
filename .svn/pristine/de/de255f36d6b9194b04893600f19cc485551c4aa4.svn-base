@@ -1,0 +1,17 @@
+<!--pages/my/my-fan/my-fan.wxml-->
+<view class='ul' wx:if="{{FanData!='暂无数据'}}">
+  <view class='li' wx:for='{{FanData}}' wx:key="" >
+  <view catchtap='toPage' data-url="/pages/my/my-others/my-others?id={{item.user_id}}">
+    <image class='img' src='{{item.user_image}}'></image>
+    <span>{{item.user_name}}</span>
+    </view>
+    <button bindtap="showedit" wx:if="{{item.user_id != self_id}}"  class='button {{item.status=="互关"?"isRuleShow":""}}'
+    data-index="{{index}}" data-user='{{item.user_id}}'>{{item.status}}</button>
+  </view>
+</view>
+
+<!-- 暂无粉丝 -->
+<view class='hide' wx:if="{{FanData=='暂无数据'}}">
+    <image class='img' src='/images/my/default.png'></image>
+    <view class='cont'>啊哦，粉丝被外星人抓走了~</view>
+</view>

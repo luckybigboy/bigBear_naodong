@@ -1,0 +1,19 @@
+<!--pages/editor-title/editor-title.wxml-->
+<view class='content'>
+<!-- 输入标题 -->
+  <view class='write-title'>
+    <input placeholder='输入不超过30个字的标题' maxlength="30" bindinput="watchInput" value='{{inputTitle}}'/>
+    <button bindtap='goNext' disabled='{{booleans}}'>下一步</button>
+  </view>
+  <view class='nums'>{{num}}/30</view>
+<!-- 选择标签 -->
+  <view class='classification'>分类标签（必选）</view>
+  <view class='labels'>
+    <text class="{{status==idx? 'show':' '}}" wx:for-index='idx' wx:for="{{labels}}" wx:key bindtap='changeOpacity' data-idx="{{idx}}" data-n="{{item.class_name}}" data-class_id="{{item.class_id}}">{{item.class_name}}</text>
+  </view>
+<!-- 选择热门标题 -->
+  <view class='hot-title'>
+    <text>热门标题</text>
+    <text wx:for = "{{hotTitle}}" wx:key bindtap='changeTitle' data-t='{{item.article_title}}'>{{item.article_title}}</text>
+  </view>
+</view>

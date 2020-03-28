@@ -1,0 +1,10 @@
+<!--pages/my-choose-face/my-choose-face.wxml-->
+<view class='choose' bindtap='goNext'>
+  <text class='title'>选一张</text>
+  <image src='/images/my/icon-rjt.png' class='angleImg fr'></image>
+</view>
+<view class='choose' bindtap='goPhoneImg'>
+  <text class='title'>从手机相册选择</text>
+  <image src='/images/my/icon-rjt.png' class='angleImg fr'></image>
+</view>
+<canvas canvas-id="canvas" style="width:{{cWidth}}px;height:{{cHeight}}px;position: absolute;left:-1000px;top:-1000px;"></canvas>

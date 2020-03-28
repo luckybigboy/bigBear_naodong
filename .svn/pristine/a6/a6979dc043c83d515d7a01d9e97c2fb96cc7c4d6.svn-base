@@ -1,0 +1,23 @@
+<!--pages/my/my-drafts/my-drafts.wxml-->
+<scroll-view bindscrolltolower='lower' scroll-y='true'>
+  <view class="container" wx:if="{{ list.length > 0 }}">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{list}}" wx:key>
+      <view class="content" bindtap='toPages' data-index='{{ item.article_id }}' data-image='{{ item.article_image }}'  data-content="{{ item.article_content }}" data-classId="{{ item.class_id }}" data-className="{{ item.class_name }}" data-articleTitle="{{ item.article_title }}">
+        <text class='title titleStyle1'>{{index}}-{{item.article_title}}</text>
+        <text class='title titleStyle2'>{{ item.failure_time }}小时后将失效并删除</text>
+        <image src="../../../images/my/icon-rjt.png" alt="" class="angleImg"></image>
+      </view>
+      <view class="del" catchtap="del" data-id="{{item.article_id}}">删除</view>
+    </view>
+    <text wx:if="{{list.length==total0}}" class='tip'>已无更多数据</text>
+    <text wx:else class='tip'>正在加载...</text>
+  </view>
+
+  <view class='noNews' wx:if="{{ list.length == 0 && code == 201 }}">
+    <image src='../../../images/default-my.png'></image>
+    <view class='title'>
+      <text>空空如也~</text>
+      <text bindtap='toPages'>开脑洞</text>
+    </view>
+  </view>
+</scroll-view>

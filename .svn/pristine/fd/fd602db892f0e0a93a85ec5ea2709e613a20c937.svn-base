@@ -1,0 +1,19 @@
+<!--pages/my/my-attention/my-attention.wxml-->
+<view class='ul' wx:if="{{Attention!='暂无数据'}}">
+  <view class='li' wx:for='{{Attention}}' wx:key="">
+    <image class='img' src='{{item.user_image}}'></image>
+    <span>{{item.user_name}}</span>
+    <button bindtap="showedit"  class='button {{item.bgColor?"isRuleShow":""}}'
+    data-index="{{index}}" data-user='{{item.user_id}}'>
+    {{item.status}}</button>
+  </view>
+</view>
+
+<!-- 暂无关注 -->
+<view class='hide' wx:if="{{Attention=='暂无数据'}}">
+    <image class='img' src='/images/my/default.png'></image>
+    <view class='cont'>快去关注喜欢的作者吧</view>
+</view>
+
+
+

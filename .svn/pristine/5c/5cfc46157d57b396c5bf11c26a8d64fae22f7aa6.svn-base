@@ -1,0 +1,34 @@
+<view class="item-box">
+  <view class="items" wx:if="{{ list!='暂无数据' }}">
+    <view wx:for="{{ list }}" wx:key="{{ index }}" class="item" catchtap='toPage' data-url="/pages/my/my-others/my-others?id={{item.user_id}}">
+      <view bindtouchstart="touchS" bindtouchmove="touchM"                              bindtouchend="touchE" data-index="{{ index }}" 
+      style="{{item.txtStyle}}" class="inners txt">
+        <image class='img' src='{{ item.user_image }}'></image>
+        <text class='title'>{{ item.user_name }}</text> 
+        <image src="{{ item.angleImg }}" alt="" class="angleImg"></image>
+      </view>
+      <view data-index="{{ index }}" data-user='{{item.user_id}}'                     bindtap="delItem" 
+      class="inner del" bindtap="showDialogBtn">
+        移除
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 暂无黑名单 -->
+<view class='hide' wx:if="{{list=='暂无数据'}}">
+    <image class='img' src='/images/my/default.png'></image>
+    <view class='cont'>阿哦！黑名单中暂无记录哦</view>
+</view>
+
+<!--移除弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+      <view class="modal-title">确定将用户在黑名单中移除?</view>
+      <view class="modal-title2">不可撤销移除，移除后将恢复互动</view>
+      <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消           </view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">移除        </view>  
+  </view>
+</view>
+

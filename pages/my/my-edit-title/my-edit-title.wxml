@@ -1,0 +1,16 @@
+<!--pages/my/my-edit-title/my-edit-title.wxml-->
+<view class='content'>
+  <view class='write-title'>
+    <input placeholder='输入不超过30个字的标题' maxlength="30" bindinput="watchInput" value='{{inputTitle}}'/>
+    <button bindtap='goNext' disabled='{{booleans}}'>下一步</button>
+  </view>
+  <view class='nums'>{{num}}/30</view>
+  <view class='classification'>分类标签（必选）</view>
+  <view class='labels'>
+    <text class="{{status==idx? 'show':' '}}" wx:for-index='idx' wx:for="{{labels}}" bindtap='changeOpacity' data-idx="{{idx}}">{{item.label1}}</text>
+  </view>
+  <view class='hot-title'>
+    <text>热门标题</text>
+    <text wx:for = "{{hotTitle}}" bindtap='changeTitle' data-t='{{item.title}}'>{{item.title}}         </text>
+  </view>
+</view>

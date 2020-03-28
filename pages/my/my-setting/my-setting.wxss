@@ -1,0 +1,72 @@
+/* pages/my/my-setting/my-setting.wxss */
+page {
+  background-color: #f8f8f8;
+}
+
+.Set-ul {
+  background: #fff;
+  margin-bottom: 20rpx;
+  border-bottom: 1px solid  #BCBBC1;
+}
+
+.Set-ul .Set-li {
+  position: relative;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding:0 20rpx;
+}
+
+.Set-ul .Set-li .Set-num {
+  position: absolute;
+  top:36rpx;
+  right: 67rpx;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.Set-ul .Set-li text {
+  font-size: 34rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.Set-ul .Set-li .Set-icon-arrow{
+  position: absolute;
+  right: 20rpx;
+  top: 42rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.Set-ul .share {
+  position: relative;
+  height: 120rpx;
+  line-height: 120rpx;
+  padding:0 20rpx;
+}
+
+.Set-ul .share .share-Button {
+  font-size:34rpx;
+  font-weight:400;
+  color:rgba(51, 51, 51, 1);
+  background:none;
+  padding:0;
+  margin:0;
+  text-align:left;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+
+.Set-outLogin {
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-top: 35rpx;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid  #BCBBC1;
+}
+
+.Set-outLogin p {
+  color: #D0021B;
+  font-size:34rpx;
+}

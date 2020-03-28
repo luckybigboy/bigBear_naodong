@@ -1,0 +1,22 @@
+<!--pages/my/my-edit-text/my-edit-text.wxml-->
+<!-- '/images/initiate/Bitmap.png' -->
+<view class='text-content'>
+  <view class='content-img'>
+  <!-- /images/initiate/Bitmap.png -->
+    <image src="{{ imgUrl }}" />
+    <image src="/images/my/icon-img.png" />
+  </view>
+  <text bindtap='changeImg'>点击更改图片</text>
+  <view class="content-edit">
+    <button>存草稿</button>
+    <editor
+      class="ql-container"
+      placeholder="正文"
+      bindfocus="focusEd"
+      bindinput="onEditorReady"
+      >
+    </editor>
+    <text>{{num}}/150</text>
+  </view>
+</view>
+ <button class='btn' bindtap='goNext' disabled='{{btn}}'>发布</button>

@@ -1,0 +1,4 @@
+<!--pages/my/my-user-know/my-user-know.wxml-->
+<view class='title'>
+   {{ content }}
+</view>

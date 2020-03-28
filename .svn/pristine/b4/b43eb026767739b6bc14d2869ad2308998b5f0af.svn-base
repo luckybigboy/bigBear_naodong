@@ -1,0 +1,132 @@
+<!-- 沉浸式状态栏 -->
+<image class='bg-img' mode='aspectFill' src='{{user.user_cover}}'></image>
+<view class='nav' style="height:{{statusBar}}px">
+  <view class="head {{headStatus ? '':'active'}}" style="height:{{customBar-statusBar}}px;padding-top:{{statusBar}}px;background:rgba(255,255,255,{{op}}) ">
+    <view class="backBtn " bindtap="goBack">
+      <image wx:if="{{headStatus}}" src='/images/icon-back-white.png'></image>
+      <image wx:if="{{!headStatus}}" src='/images/icon-back.png'></image>
+    </view>
+    <view class="title" style="top:{{statusBar}}px ">{{user.user_name}}</view>
+  </view>
+</view>
+
+<!-- 页面顶部 -->
+<view class='my-head' style='padding-top:{{customBar-statusBar}}px;'>
+  <view class='top'>
+    <image class='tx' mode='aspectFill' src='{{user.user_image}}'></image>
+    <view class='ul'>
+      <view class='li' catchtap='toPage' data-url="/pages/my/my-attention/my-attention?id={{user.user_id}}&type=1">
+        <text wx:if="{{user.user_follow_num}}==null" class='p'>0</text>
+        <text wx:else class='p'>{{user.user_follow_num}}</text>
+        <text class='span'>关注</text>
+      </view>
+
+      <view class='li' catchtap='toPage' data-url="/pages/my/my-fan/my-fan?id={{user.user_id}}&type=1">
+        <text wx:if="{{user.user_fans_num}}==null" class='p'>0</text>
+        <text wx:else class='p'>{{user.user_fans_num}}</text>
+        <text class='span'>粉丝</text>
+      </view>
+
+      <view class='li'>
+        <text wx:if="{{user.user_collection_num}}==null" class='p'>0</text>
+        <text wx:else class='p'>{{user.user_collection_num}}</text>
+        <text class='span'>获赞收藏</text>
+      </view>
+      <view class='btn-list'>
+        <button class="{{status.follow_state==0?'active':''}}" bindtap='attention'>
+          <text wx:if="{{status.follow_state==0}}">关注</text>
+          <text wx:else>已关注</text>
+        </button>
+        <button bindtap='toast'>更多</button>
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <text class='span'>个人简介三十个字个人简介三十个字个人简介三十个字个人简介三十</text>
+  </view>
+</view>
+
+<view class='bg-white'>
+
+  <view class='head-nav' style='top:{{customBar}}px'>
+    <view bindtap='navTab' data-cur="{{index}}" wx:for="{{nav}}" wx:key class="nav-li {{index==cur?'active':''}}">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+
+  <scroll-view hidden='{{cur!=0}}' bindscrolltolower="lower0" scroll-y="true" style='height:{{scrHeight}}px'>
+    <block wx:if="{{status.black_state == 0}}">
+      <view class='my-body' wx:if="{{list0.length>0}}">
+        <view class='ul'>
+
+          <view class='li' wx:for="{{list0}}" wx:key catchtap='toPage' data-url="/pages/index/article-detail/article-detail?article_id={{item.article_id}}">
+            <text class='h3'>{{item.article_title}}</text>
+            <text class='p'>{{item.article_content}}</text>
+            <text class='span'>已更到{{item.article_floor}}楼</text>
+          </view>
+
+          <text wx:if="{{list0.length==total0}}" class='tip'>已无更多数据</text>
+          <text wx:else class='tip'>正在加载...</text>
+
+        </view>
+      </view>
+      <view class='default' wx:if="{{list0.length==0}}">
+        <image src="/images/default-my.png"></image>
+        <view>空空如也~
+          <text bindtap='toIndex'>返回首页</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <scroll-view hidden='{{cur!=1}}' bindscrolltolower="lower1" scroll-y="true" style='height:{{scrHeight}}px'>
+    <block wx:if="{{status.black_state == 0}}">
+      <view class='my-body' wx:if="{{list1.length>0}}">
+        <view class='ul'>
+
+          <view class='li' wx:for="{{list1}}" wx:key catchtap='toPage' data-url="/pages/index/article-detail/article-detail?article_id={{item.article_id}}">
+            <text class='h3'>{{item.article_title}}</text>
+            <text class='p'>{{item.article_content}}</text>
+            <text class='span'>已更到{{item.article_floor}}楼</text>
+          </view>
+
+          <text wx:if="{{list1.length==total1}}" class='tip'>已无更多数据</text>
+          <text wx:else class='tip'>正在加载...</text>
+
+        </view>
+      </view>
+      <view class='default' wx:if="{{list1.length==0}}">
+        <image src="/images/default-my.png"></image>
+        <view>空空如也~
+          <text bindtap='toIndex'>返回首页</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <scroll-view hidden='{{cur!=2}}' bindscrolltolower="lower2" scroll-y="true" style='height:{{scrHeight}}px'>
+    <block wx:if="{{status.black_state == 0}}">
+      <view class='my-body' wx:if="{{list2.length>0}}">
+        <view class='ul'>
+
+          <view class='li' wx:for="{{list2}}" wx:key catchtap='toPage' data-url="/pages/index/article-detail/article-detail?article_id={{item.article_id}}">
+            <text class='h3'>{{item.article_title}}</text>
+            <text class='p'>{{item.article_content}}</text>
+            <text class='span'>已更到{{item.article_floor}}楼</text>
+          </view>
+          <text wx:if="{{list2.length==total2}}" class='tip'>已无更多数据</text>
+          <text wx:else class='tip'>正在加载...</text>
+
+        </view>
+      </view>
+      <view class='default' wx:if="{{list2.length==0}}">
+        <image src="/images/default-my.png"></image>
+        <view>空空如也~
+          <text bindtap='toIndex'>返回首页</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+
+<footnav id="footnav" nav1="{{footNav1}}" bind:clickOn="navClick" nav2="{{footNav2}}"></footnav>

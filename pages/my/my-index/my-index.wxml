@@ -1,0 +1,36 @@
+<!--pages/my/my-index/my-index.wxml-->
+<view wx:if="{{isLogin}}">
+  <view class='top'>
+    <image class='tx' src='{{userInfo.user_image}}'></image>
+    <view class='right' bindtap='toPage' data-url="../my-set-profile/my-set-profile?id={{userInfo.user_id}}">
+      <text class='h3'>{{userInfo.user_name}}</text>
+      <text wx:if="{{userInfo.user_introduce==null}}" class='p'>暂无简介，请设置</text>
+      <text wx:else class='p'>{{userInfo.user_introduce}}</text>
+    </view>
+  </view>
+
+  <view class='ul'>
+    <view class='li' bindtap='toPage' data-url="../my-mine/my-mine?id={{userInfo.user_id}}">
+      <image class='tx' src='/images/my/icon1.png'></image>
+      <text>我的主页</text>
+      <image class='icon-arrow' src='/images/my/icon-rjt.png'></image>
+    </view>
+  </view>
+
+  <view class='ul'>
+    <view class='li' wx:for="{{navList}}" wx:key bindtap='toPage' data-url="{{item.url}}?id={{userInfo.user_id}}">
+      <image class='tx' src='{{item.imgUrl}}'></image>
+      <text>{{item.name}}</text>
+      <image class='icon-arrow' src='/images/my/icon-rjt.png'></image>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{isShow}}">
+  <view class='login'>
+    <image src='/images/my/login.png'></image>
+    <text>登录后就可以看到“我”啦</text>
+    <button bindtap='toLogin'>前往登录</button>
+  </view>
+</view>

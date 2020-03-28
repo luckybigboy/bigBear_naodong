@@ -1,0 +1,54 @@
+<!--pages/editor-text/editor-text.wxml-->
+
+<!-- 沉浸式状态栏 -->
+<image class='bg-img' mode='aspectFill' src="{{imgUrl}}"></image>
+<view class='nav' style="height:{{statusBar}}px">
+  <view class="head {{headStatus ? '':'active'}}" style="height:{{customBar-statusBar}}px;padding-top:{{statusBar}}px;background:rgba(255,255,255,{{op}}) ">
+    <view class="backBtn " bindtap="goBack">
+      <image wx:if="{{headStatus}}" src='/images/icon-back-white.png' bindtap='goback'></image>
+      <image wx:if="{{!headStatus}}" src='/images/icon-back.png' bindtap='goback'></image>
+    </view>
+    <view class="title" style="top:{{statusBar}}px ">开脑洞</view>
+  </view>
+</view>
+
+<view class='text-content' style='padding-top:{{customBar-statusBar}}px;'>
+  <view class='content-title'>
+    <text>{{class_name}}</text>
+    <text>{{titles}}</text>
+  </view>
+  <view class='content-img' bindtap='changeImg'>
+    <image src="{{imgUrl}}" mode="aspectFill"/>
+    <image src="/images/my/icon-img.png" />
+  </view>
+  <text class='clickImg'>点击更改图片</text>
+ 
+</view>
+ <view class="content-edit {{iosBoolean ? 'show':' '}}">
+    <button class='draft' bindtap='draft' disabled='{{btn}}'>存草稿</button>
+    <editor
+      id="editor"
+      class="ql-container"
+      placeholder="正文"
+      bindfocus="focusEd"
+      bindblur="blurEd"
+      bindinput="onEditorReady"
+      >
+    </editor>
+    <!-- <textarea
+      class="ql-container"
+      placeholder="正文"
+      value='{{text}}'
+      show-confirm-bar="{{booleans}}"
+      bindfocus="focusEd"
+      bindblur="blurEd"
+      bindinput="onEditorReady"
+      maxlength="150"
+      auto-height="{{heights}}"
+    > 
+    </textarea>-->
+    <text>{{num}}/150</text>
+    <button class='btn' bindtap='goNext' disabled='{{btn}}'>发布</button>
+  </view>
+  <toast id="toast" title="提示"  cont="是否保存为草稿！" bind:cancel="modalCancel" bind:confirm='modalConfirm'></toast>
+ 

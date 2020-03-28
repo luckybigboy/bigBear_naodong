@@ -1,0 +1,16 @@
+/* pages/my/my-setting-protocol/my-setting-protocol.wxss */
+.Protocol {
+  text-align:left;
+  padding:20rpx 32rpx 0 32rpx;
+  text-indent:1em;
+  font-size:28px;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:30px;
+}
+
+.Protocol p {
+  font-size: 28rpx;
+  color: #333;
+}
